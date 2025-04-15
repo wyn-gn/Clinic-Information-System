@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Clinis_infosys
+{
+    public partial class ApoointmentControl : UserControl
+    {
+        public ApoointmentControl()
+        {
+            InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            formAddAppt addAppt = new formAddAppt();
+            addAppt.Show();
+
+        }
+    }
+}
