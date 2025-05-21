@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.prescription_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.record_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medication_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Doctors = new System.Windows.Forms.Label();
-            this.col_presid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_recid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_patid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_docid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_medname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ins = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_dosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(933, 51);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 26);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -61,31 +50,69 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_presid,
-            this.col_recid,
-            this.col_patid,
-            this.col_docid,
-            this.col_medname,
-            this.col_ins,
-            this.col_dosage});
+            this.prescription_id,
+            this.record_id,
+            this.doctor_id,
+            this.patient_id,
+            this.medicine_name,
+            this.medication_name,
+            this.dosage,
+            this.instructions});
             this.dataGridView1.Location = new System.Drawing.Point(50, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(958, 532);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // btnAdd
+            // prescription_id
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(840, 51);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 26);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.prescription_id.HeaderText = "Prescription ID";
+            this.prescription_id.MinimumWidth = 6;
+            this.prescription_id.Name = "prescription_id";
+            // 
+            // record_id
+            // 
+            this.record_id.HeaderText = "Record ID";
+            this.record_id.MinimumWidth = 6;
+            this.record_id.Name = "record_id";
+            // 
+            // doctor_id
+            // 
+            this.doctor_id.HeaderText = "Doctor ID";
+            this.doctor_id.MinimumWidth = 6;
+            this.doctor_id.Name = "doctor_id";
+            // 
+            // patient_id
+            // 
+            this.patient_id.HeaderText = "Patient ID";
+            this.patient_id.MinimumWidth = 6;
+            this.patient_id.Name = "patient_id";
+            // 
+            // medicine_name
+            // 
+            this.medicine_name.HeaderText = "Medicine ID";
+            this.medicine_name.MinimumWidth = 6;
+            this.medicine_name.Name = "medicine_name";
+            // 
+            // medication_name
+            // 
+            this.medication_name.HeaderText = "Medication Name";
+            this.medication_name.MinimumWidth = 6;
+            this.medication_name.Name = "medication_name";
+            // 
+            // dosage
+            // 
+            this.dosage.HeaderText = "Dosage";
+            this.dosage.MinimumWidth = 6;
+            this.dosage.Name = "dosage";
+            // 
+            // instructions
+            // 
+            this.instructions.HeaderText = "Instructions";
+            this.instructions.MinimumWidth = 6;
+            this.instructions.Name = "instructions";
             // 
             // Doctors
             // 
@@ -99,56 +126,25 @@
             this.Doctors.TabIndex = 5;
             this.Doctors.Text = "Prescriptions";
             // 
-            // col_presid
+            // btnExport
             // 
-            this.col_presid.HeaderText = "Prescription ID";
-            this.col_presid.MinimumWidth = 6;
-            this.col_presid.Name = "col_presid";
-            // 
-            // col_recid
-            // 
-            this.col_recid.HeaderText = "Record ID";
-            this.col_recid.MinimumWidth = 6;
-            this.col_recid.Name = "col_recid";
-            // 
-            // col_patid
-            // 
-            this.col_patid.HeaderText = "Patient ID";
-            this.col_patid.MinimumWidth = 6;
-            this.col_patid.Name = "col_patid";
-            // 
-            // col_docid
-            // 
-            this.col_docid.HeaderText = "Doctor ID";
-            this.col_docid.MinimumWidth = 6;
-            this.col_docid.Name = "col_docid";
-            // 
-            // col_medname
-            // 
-            this.col_medname.HeaderText = "Medicine Name";
-            this.col_medname.MinimumWidth = 6;
-            this.col_medname.Name = "col_medname";
-            // 
-            // col_ins
-            // 
-            this.col_ins.HeaderText = "Instructions";
-            this.col_ins.MinimumWidth = 6;
-            this.col_ins.Name = "col_ins";
-            // 
-            // col_dosage
-            // 
-            this.col_dosage.HeaderText = "Dosage";
-            this.col_dosage.MinimumWidth = 6;
-            this.col_dosage.Name = "col_dosage";
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(933, 45);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 26);
+            this.btnExport.TabIndex = 15;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // PrescriptionsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.Doctors);
             this.Name = "PrescriptionsControl";
             this.Size = new System.Drawing.Size(1060, 647);
@@ -159,17 +155,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label Doctors;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_presid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_recid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_patid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_docid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_medname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ins;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_dosage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prescription_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn record_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctor_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medication_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dosage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instructions;
+        private System.Windows.Forms.Button btnExport;
     }
 }

@@ -117,5 +117,14 @@ namespace Clinis_infosys
         {
             medicalRecordsControl.BringToFront();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            FrmLogin loginForm = new FrmLogin();
+            loginForm.Show();
+
+            this.Hide();
+        }
+
     }
 }

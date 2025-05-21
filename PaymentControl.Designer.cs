@@ -28,35 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.col_payid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_patid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_paymet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_paystatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_paydate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payment_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payment_method = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payment_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payment_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patients = new System.Windows.Forms.Label();
+            this.btnRaisePayments = new System.Windows.Forms.Button();
+            this.lblDueToday = new System.Windows.Forms.Label();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnDelete
+            // btnUpdate
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(933, 51);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 26);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(933, 51);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 26);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(840, 51);
+            this.btnAdd.Location = new System.Drawing.Point(852, 51);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 26);
             this.btnAdd.TabIndex = 13;
@@ -72,54 +78,55 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_payid,
-            this.col_patid,
-            this.col_amount,
-            this.col_paymet,
-            this.col_paystatus,
-            this.col_paydate});
+            this.payment_id,
+            this.patient_id,
+            this.amount,
+            this.payment_method,
+            this.payment_status,
+            this.payment_date});
             this.dataGridView1.Location = new System.Drawing.Point(50, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(958, 532);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // col_payid
+            // payment_id
             // 
-            this.col_payid.HeaderText = "Payment ID";
-            this.col_payid.MinimumWidth = 6;
-            this.col_payid.Name = "col_payid";
+            this.payment_id.HeaderText = "Payment ID";
+            this.payment_id.MinimumWidth = 6;
+            this.payment_id.Name = "payment_id";
             // 
-            // col_patid
+            // patient_id
             // 
-            this.col_patid.HeaderText = "Patient ID";
-            this.col_patid.MinimumWidth = 6;
-            this.col_patid.Name = "col_patid";
+            this.patient_id.HeaderText = "Patient ID";
+            this.patient_id.MinimumWidth = 6;
+            this.patient_id.Name = "patient_id";
             // 
-            // col_amount
+            // amount
             // 
-            this.col_amount.HeaderText = "Amount";
-            this.col_amount.MinimumWidth = 6;
-            this.col_amount.Name = "col_amount";
+            this.amount.HeaderText = "Amount";
+            this.amount.MinimumWidth = 6;
+            this.amount.Name = "amount";
             // 
-            // col_paymet
+            // payment_method
             // 
-            this.col_paymet.HeaderText = "Payment Method";
-            this.col_paymet.MinimumWidth = 6;
-            this.col_paymet.Name = "col_paymet";
+            this.payment_method.HeaderText = "Payment Method";
+            this.payment_method.MinimumWidth = 6;
+            this.payment_method.Name = "payment_method";
             // 
-            // col_paystatus
+            // payment_status
             // 
-            this.col_paystatus.HeaderText = "Status";
-            this.col_paystatus.MinimumWidth = 6;
-            this.col_paystatus.Name = "col_paystatus";
+            this.payment_status.HeaderText = "Status";
+            this.payment_status.MinimumWidth = 6;
+            this.payment_status.Name = "payment_status";
             // 
-            // col_paydate
+            // payment_date
             // 
-            this.col_paydate.HeaderText = "Payment Date";
-            this.col_paydate.MinimumWidth = 6;
-            this.col_paydate.Name = "col_paydate";
+            this.payment_date.HeaderText = "Payment Date";
+            this.payment_date.MinimumWidth = 6;
+            this.payment_date.Name = "payment_date";
             // 
             // Patients
             // 
@@ -133,18 +140,64 @@
             this.Patients.TabIndex = 11;
             this.Patients.Text = "Payments";
             // 
+            // btnRaisePayments
+            // 
+            this.btnRaisePayments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRaisePayments.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaisePayments.Location = new System.Drawing.Point(933, 22);
+            this.btnRaisePayments.Name = "btnRaisePayments";
+            this.btnRaisePayments.Size = new System.Drawing.Size(75, 23);
+            this.btnRaisePayments.TabIndex = 15;
+            this.btnRaisePayments.Text = "Raise Payments";
+            this.btnRaisePayments.UseVisualStyleBackColor = true;
+            this.btnRaisePayments.Click += new System.EventHandler(this.btnRaisePayments_Click_1);
+            // 
+            // lblDueToday
+            // 
+            this.lblDueToday.AutoSize = true;
+            this.lblDueToday.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDueToday.Location = new System.Drawing.Point(54, 58);
+            this.lblDueToday.Name = "lblDueToday";
+            this.lblDueToday.Size = new System.Drawing.Size(96, 22);
+            this.lblDueToday.TabIndex = 16;
+            this.lblDueToday.Text = "Due Today: 0";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(771, 50);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 27);
+            this.btnExport.TabIndex = 17;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(852, 22);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(75, 22);
+            this.numericUpDown1.TabIndex = 18;
+            // 
             // PaymentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.lblDueToday);
+            this.Controls.Add(this.btnRaisePayments);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Patients);
             this.Name = "PaymentControl";
             this.Size = new System.Drawing.Size(1061, 647);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,15 +205,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Patients;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_payid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_patid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_paymet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_paystatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_paydate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payment_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payment_method;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payment_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payment_date;
+        private System.Windows.Forms.Button btnRaisePayments;
+        private System.Windows.Forms.Label lblDueToday;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

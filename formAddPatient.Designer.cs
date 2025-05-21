@@ -38,6 +38,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -46,12 +50,13 @@
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(396, 347);
+            this.button1.Location = new System.Drawing.Point(396, 448);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 33);
             this.button1.TabIndex = 17;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
@@ -137,6 +142,42 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Date of Birth";
             // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(246, 350);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(233, 30);
+            this.textBox4.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(63, 355);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 24);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Age";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(246, 399);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(233, 30);
+            this.textBox5.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(63, 404);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 24);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Address";
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,7 +191,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 404);
+            this.ClientSize = new System.Drawing.Size(542, 509);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -165,6 +210,7 @@
             this.Name = "formAddPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formAddPatient";
+            this.Load += new System.EventHandler(this.formAddPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +228,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

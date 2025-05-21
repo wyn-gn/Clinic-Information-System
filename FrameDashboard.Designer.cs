@@ -41,6 +41,7 @@
             this.btnDoctors = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.header.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.sidebar.Controls.Add(this.btnLogout);
             this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Controls.Add(this.btnMedrecords);
             this.sidebar.Controls.Add(this.btnInventory);
@@ -190,6 +192,17 @@
             this.mainPanel.Size = new System.Drawing.Size(1049, 653);
             this.mainPanel.TabIndex = 5;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(31, 597);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(91, 44);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // FrameDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,5 +236,6 @@
         private System.Windows.Forms.Button btnMedrecords;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
